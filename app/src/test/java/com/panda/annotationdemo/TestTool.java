@@ -17,7 +17,6 @@ public class TestTool {
         StringBuilder log = new StringBuilder();
         // 记录异常的次数
         int errornum = 0;
-
         for (Method m : method) {
         // 只有被 @Jiecha 标注过的方法才进行测试，A.isAnnotationPresent(B.class);B类型的注解是否在A类上
             if (m.isAnnotationPresent(Jiecha.class)) {
@@ -26,7 +25,6 @@ public class TestTool {
                     //在类的外面获取此类的私有成员变量的value时，需要注意：设置setAccessible
                     m.setAccessible(true);
                     m.invoke(testobj, null);
-
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
                     //e.printStackTrace();
